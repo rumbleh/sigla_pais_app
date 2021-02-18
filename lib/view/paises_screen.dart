@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sigla_pais_app/service/requisicao.dart';
 import 'package:sigla_pais_app/view/menu.dart';
+import 'package:sigla_pais_app/view/paises_dados.dart';
 
 class PaisesScreen extends StatelessWidget {
   @override
@@ -10,13 +11,7 @@ class PaisesScreen extends StatelessWidget {
         title: Text("Siglas dos países"),
         actions: [IconButton(icon: Icon(Icons.refresh), onPressed: () {})],
       ),
-      body: Container(
-        alignment: Alignment.center,
-        child: FlatButton(
-          child: Text("Listagem"),
-          onPressed: () => {Requisicao.requisicaoPaises()},
-        ),
-      ),
+      body: PaisesDados(),
       drawer: Menu(),
     );
   }

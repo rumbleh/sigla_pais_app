@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sigla_pais_app/view/ajuda.dart';
 
 class Menu extends StatelessWidget {
   @override
@@ -28,7 +29,13 @@ class Menu extends StatelessWidget {
               ListTile(
                   leading: Icon(Icons.help),
                   title: Text("Ajuda"),
-                  onTap: () => {}),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => Ajuda()));
+                  }),
             ],
           ),
         ),
