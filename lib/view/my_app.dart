@@ -7,9 +7,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Sigla dos Países',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primaryColor: Colors.orangeAccent),
       home: PaisesScreen(),
     );
   }
