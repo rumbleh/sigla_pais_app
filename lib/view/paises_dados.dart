@@ -23,8 +23,8 @@ class _PaisesDadosState extends State<PaisesDados> {
                     alignment: Alignment.center,
                     child: Padding(
                       padding: const EdgeInsets.all(50.0),
-                      child:
-                          Text("Aguarde...", style: TextStyle(fontSize: 16.0)),
+                      child: Text("Carregando...",
+                          style: TextStyle(fontSize: 16.0)),
                     ),
                   );
                 }
@@ -32,5 +32,33 @@ class _PaisesDadosState extends State<PaisesDados> {
         ],
       ),
     );
+  }
+
+  Widget _listaPaises(List paises) {
+    return paises != null
+        ? Flexible(
+            child: ListView.builder(
+                itemCount: paises.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                      child: Card(
+                        child: ExpansionTile(
+                            title: Text("${paises[index]["name"]}"),
+                            children: [
+                              Container(
+                                alignment: Alignment.centerLeft,
+                                child: Text("${paises[index]["code"]}"),
+                              )
+                            ]),
+                      ),
+                      alignment: Alignment.center);
+                }))
+        : Container(
+            alignment: Alignment.center,
+            child: Padding(
+              padding: EdgeInsets.all(50.0),
+              child: Text("Carregando...", style: TextStyle(fontSize: 16.0)),
+            ),
+          );
   }
 }
